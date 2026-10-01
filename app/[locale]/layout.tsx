@@ -30,7 +30,7 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound()
   }
- 
+
   return (
     <html
       lang={locale}
@@ -46,7 +46,14 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider>
           <TooltipProvider>
-            <ThemeProvider>{children}</ThemeProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
           </TooltipProvider>
           <Toaster />
         </NextIntlClientProvider>
