@@ -1,3 +1,4 @@
+import LanguageSwitcher from "@/components/language-switcher"
 import { ModeToggle } from "@/components/mode-toggle"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
@@ -13,6 +14,7 @@ export default function HomePage() {
           <Button className="mt-2">Button</Button>
         </div>
         <ModeToggle />
+        <LanguageSwitcher />
         <div className="font-mono text-xs text-muted-foreground">
           (Press <kbd>d</kbd> to toggle dark mode)
         </div>

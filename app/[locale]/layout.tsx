@@ -1,4 +1,4 @@
-import { Geist_Mono, Inter } from "next/font/google"
+import { Geist_Mono, Inter, Noto_Sans_Arabic } from "next/font/google"
 import { notFound } from "next/navigation"
 import { hasLocale, NextIntlClientProvider } from "next-intl"
 import { routing } from "@/i18n/routing"
@@ -14,6 +14,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+})
+
+const fontSans = Noto_Sans_Arabic({
+  subsets: ["arabic"],
+  variable: "--font-sans",
 })
 
 const rtlLocales = new Set<string>(["ar"])
@@ -38,6 +43,7 @@ export default async function LocaleLayout({
       suppressHydrationWarning
       className={cn(
         "antialiased",
+        fontSans.variable,
         fontMono.variable,
         "font-sans",
         inter.variable
